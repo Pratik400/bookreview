@@ -62,8 +62,8 @@ if ($_SERVER["REQUEST_METHOD"] == "POST" && isset($_POST["submit"])) {
 
 
 <div class="container">
-    <h2>Add Book</h2>
     <?php
+
     // Display validation errors, if any
     if (!empty($errors)) {
         echo "<div style='color: red;'>";
@@ -76,15 +76,20 @@ if ($_SERVER["REQUEST_METHOD"] == "POST" && isset($_POST["submit"])) {
     }
     ?>
 
-    <form method="post" autocomplete="off" action="<?php echo htmlspecialchars($_SERVER["PHP_SELF"]); ?>">
-        <label for="bookId">Book ID:</label>
-        <input type="text" id="bookId" name="bookId" maxlength="4"><br><br>
+    <div class="book-add-container">
+        <h2 class="page-header">Add Book</h2>
 
-        <label for="title">Title:</label>
-        <input type="text" id="title" name="title" maxlength="200"><br><br>
+        <form class="form" method="post" autocomplete="off" action="<?php echo htmlspecialchars($_SERVER["PHP_SELF"]); ?>">
+            <label for="bookId">Book ID:</label> <br>
+            <input type="text" id="bookId" name="bookId" maxlength="4" style="width: 200px;">
+            <br>
+            <label for="title">Title:</label>
+            <input type="text" id="title" name="title" maxlength="200">
 
-        <button type="submit" name="submit">Submit</button>
-    </form>
+            <button class="btn" type="submit" name="submit">Submit</button>
+            <button class="rst" type="reset" name="reset">Reset</button>
+        </form>
+    </div>
 </div>
 
 <?php include 'footer.php'; ?>

@@ -38,16 +38,12 @@ if (!$result) {
     die("Error executing query: " . mysqli_error($mysqli));
 }
 ?>
-
-<section class="book-container">
-
-
-    <div id="successMessage" style="display: none; color: green;">
-        Book added successfully!
-    </div>
-
-
-    <div class="container">
+<div class="container">
+    <h1 class="page-header">BOOK LIST</h1>
+    <section class="book-container">
+        <div id="successMessage" style="display: none; color: green;">
+            Book added successfully!
+        </div>
         <table>
             <thead>
                 <tr>
@@ -73,8 +69,6 @@ if (!$result) {
                 ?>
             </tbody>
         </table>
-
-    </div>
-</section>
-
+    </section>
+</div>
 <?php include 'footer.php'; ?>

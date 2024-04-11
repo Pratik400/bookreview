@@ -67,52 +67,63 @@ if (!$resultReviewers) {
 }
 ?>
 
-<!-- HTML section to display book details -->
-<section class="book-container">
-    <div class="container">
-        <div class="book-details">
-            <p><strong>Book ID:</strong> <?php echo $bookId; ?></p>
-            <p><strong>Title:</strong> <?php echo $bookTitle; ?></p>
-            <p><strong>Average Rating:</strong> <?php echo $averageRating; ?></p>
-            <p><strong>Rating Count:</strong> <?php echo $ratingCount; ?></p>
-        </div>
-    </div>
-</section>
-<!-- HTML section to display authors -->
-<section class="author-container">
-    <div class="container">
-        <h2>Authors:</h2>
-        <?php
-        // Check if authors found
-        if (mysqli_num_rows($resultAuthors) > 0) {
-            // Output authors
-            while ($rowAuthor = mysqli_fetch_assoc($resultAuthors)) {
-                echo "<p>" . $rowAuthor['authorName'] . "</p>";
-            }
-        } else {
-            echo "<p>No authors found for the book.</p>";
-        }
-        ?>
-    </div>
-</section>
+<div class="container">
 
-<!-- HTML section to display reviewers and their ratings -->
-<section class="reviewer-container">
-    <div class="container">
-        <h2>Reviewers and their Ratings:</h2>
+
+
+    <div class="bookmark">Books <i class="fa-solid fa-chevron-right"></i> <span><?php echo $bookId; ?></span> <i class="fa-solid fa-chevron-right"></i> <span><?php echo $bookTitle; ?></span> </div>
+    <section class="book-view-container">
+        <div class="book-img">
+            <img src="https://d3iqwsql9z4qvn.cloudfront.net/wp-content/uploads/2023/02/27124632/audiobook-and-hardcover-web.png" alt="">
+        </div>
+        <div class="book-details">
+            <p><?php echo $bookId; ?></p>
+            <p><?php echo $bookTitle; ?>
+
+            <section class="author-container">
+                <span>By:</span>
+                <?php
+                // Check if authors found
+                if (mysqli_num_rows($resultAuthors) > 0) {
+                    // Output authors
+                    while ($rowAuthor = mysqli_fetch_assoc($resultAuthors)) {
+                        echo "<span>" . $rowAuthor['authorName'] . ", </span>";
+                    }
+                } else {
+                    echo "<span>No authors found for the book.</span>";
+                }
+                ?>
+            </section>
+            </p>
+
+            <p><strong><i class="fa-solid fa-star "></i></strong> <?php echo $averageRating; ?><small> (<?php echo $ratingCount; ?>)</small></p>
+            <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Provident facere culpa et corrupti, corporis eum necessitatibus quisquam, earum magni aliquam molestias deserunt, suscipit ea architecto repellat. Ea dolorum harum at! Lorem ipsum dolor sit amet consectetur adipisicing elit. Provident facere culpa et corrupti, corporis eum necessitatibus quisquam, earum magni aliquam molestias deserunt, suscipit ea architecto repellat. Ea dolorum harum at! </p>
+        </div>
+    </section>
+
+    <section class="reviewer-container">
+        <h2>Reviews</h2>
+
         <?php
         // Check if reviewers found
         if (mysqli_num_rows($resultReviewers) > 0) {
             // Output reviewers and their ratings
             while ($rowReviewer = mysqli_fetch_assoc($resultReviewers)) {
-                echo "<p><strong>Reviewer Name:</strong> " . $rowReviewer['reviewerName'] . "</p>";
-                echo "<p><strong>Rating:</strong> " . $rowReviewer['rating'] . "</p>";
+                echo "<div class='reviewer'>";
+                echo " <img src='https://www.kbl.co.uk/wp-content/uploads/2017/11/Default-Profile-Male.jpg' alt=''> ";
+                echo "<div><p>" . $rowReviewer['reviewerName'] . "</p>";
+                echo "<p><i class='fa-solid fa-star '></i>" . $rowReviewer['rating'] . "/5</p>";
+                echo "</div></div>";
             }
         } else {
             echo "<p>No reviewers found for the book.</p>";
         }
         ?>
-    </div>
-</section>
+
+    </section>
+
+    <div class="bookmark"><a href="/booklist.php"> Back to List</a></div>
+
+</div>
 
 <?php include 'footer.php'; ?>

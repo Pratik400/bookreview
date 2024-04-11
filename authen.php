@@ -35,13 +35,15 @@ if (!isset($_SESSION['logged_in'])) {
 
 <?php include 'navbar.php'; ?>
 <div class="container">
-    <h2>Login</h2>
-    <form method="post">
-        <label for="username">Username:</label>
-        <input type="text" id="username" name="username" required><br><br>
-        <label for="password">Password:</label>
-        <input type="password" id="password" name="password" required><br><br>
-        <input type="submit" value="Login">
-    </form>
+    <div class="login-contaienr">
+        <h2 class="page-header">LOGIN</h2>
+        <form class="form" method="post">
+            <label for="username">Username</label>
+            <input type="text" id="username" name="username" required>
+            <label for="password">Password</label>
+            <input type="password" id="password" name="password" required>
+            <button type="submit" class="button"> Login</button>
+        </form>
+    </div>
 </div>
 <?php include 'footer.php'; ?>

@@ -5,9 +5,9 @@
     <div class="intro-body">
         <img src="https://d3iqwsql9z4qvn.cloudfront.net/wp-content/uploads/2023/02/27124632/audiobook-and-hardcover-web.png" alt="">
         <div class="">
-            <p class="">J.R.R. Tolkien</p>
-            <p class="">The Lord of the Rings</p>
             <p class="">SPECIAL PRICE</p>
+            <p class="">The Lord of the Rings</p>
+            <p class="">J.R.R. Tolkien</p>
             <p class="">$9.89</p>
             <div class="btn-main">SHOP NOW</div>
         </div>

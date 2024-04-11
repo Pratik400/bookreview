@@ -9,6 +9,7 @@
      <meta name="description" content="Your website description here">
      <meta name="keywords" content="keywords, here, separated, by, commas">
      <meta name="author" content="Pratik">
+     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css" integrity="sha512-SnH5WK+bZxgPHs44uWIX+LLJAJ9/2PkPKZ5QiAj6Ta86w+fsb2TkcmfRyVX3pBnMFcV7oQPJkl9QevSCWr3W6A==" crossorigin="anonymous" referrerpolicy="no-referrer" />
      <link rel="stylesheet" href="./style.css">
  </head>
 
@@ -24,7 +25,7 @@
                  </div>
                  <ul class="nav-list" id="nav-list">
                      <li>
-                         <a href="">Home</a>
+                         <a href="/">Home</a>
                      </li>
                      <li>
                          <a href="about.php">About</a>
@@ -32,14 +33,11 @@
                      <li>
                          <a href="booklist.php">Books table/ search</a>
                      </li>
-                     <!-- <li>
-                         <a href="/booklist.php">Book Detail</a>
-                     </li> -->
                      <li>
                          <a href="authen.php">Add book</a>
                      </li>
                      <li>
-                         <a href="#!">Contact</a>
+                         <a href="contact.php">Contact</a>
                      </li>
 
 
