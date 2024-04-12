@@ -57,12 +57,12 @@ if (!$result2) {
 
 <section class="intro-section container-fluid" style="background-size: cover ;background-image: url(https://static.showit.co/800/GLLklpZ0SmmwLHf12R1S-g/shared/holographic_background.jpg)">
     <div class="intro-body">
-        <img src="https://d3iqwsql9z4qvn.cloudfront.net/wp-content/uploads/2023/02/27124632/audiobook-and-hardcover-web.png" alt="">
+        <img src="https://www.ft.com/__origami/service/image/v2/images/raw/http%3A%2F%2Fft-ig-images-prod.s3-website-eu-west-1.amazonaws.com%2Fv1%2F8340457253-ndbcf.jpg?source=ft_ig_business_book_award&width=400&compression=best" alt="">
         <div class="">
             <p class="">SPECIAL PRICE</p>
-            <p class="">The Lord of the Rings</p>
-            <p class="">J.R.R. Tolkien</p>
-            <p class="">$9.89</p>
+            <p class="">Chip War: The Fight for the World's Most Critical Technology (4.5)</p>
+            <p class="">By Chris Miller (Author)</p>
+            <p class="">$37.89</p>
             <div class="btn-main">RELEASING SOON</div>
         </div>
     </div>
@@ -94,45 +94,46 @@ if (!$result2) {
 
 <section class="featured-categories">
     <div class="container">
+        <h1>Browse by Category</h1>
         <div class="custom-row">
             <div class="category-col">
                 <div class="category-card">
-                    <img src="https://covers.bookcoverzone.com/slir/w450/png24-front/bookcover0020424.jpg" alt="">
+                    <img src="https://novapublishers.com/wp-content/uploads/2022/02/9781685076153_2-1000x1585.jpg" alt="">
                     <div class="category-card-info">
-                        <h3>SCI-FI & FANTASY</h3>
+                        <h3>Technical Infrastructure</h3>
                         <ul class="">
-                            <li class=""><a href=".">Historical Sci-Fi</a></li>
-                            <li class=""> <a href=".">History</a></li>
-                            <li class=""><a href=".">Kid's Sci-Fi & Fantasy</a> </li>
-                            <li class=""><a href=".">Older Children's</a></li>
+                            <li class=""><a href=".">Cloud Computing</a></li>
+                            <li class=""> <a href=".">Networking</a></li>
+                            <li class=""><a href=".">DevOps</a> </li>
+                            <li class=""><a href=".">Mobile Development</a></li>
                         </ul>
                     </div>
                 </div>
             </div>
             <div class="category-col">
                 <div class="category-card">
-                    <img src="https://covers.bookcoverzone.com/slir/w450/png24-front/bookcover0020424.jpg" alt="">
+                    <img src="https://www.worldscientific.com/action/showCoverImage?doi=10.1142/11921" alt="">
                     <div class="category-card-info">
-                        <h3>SCI-FI & FANTASY</h3>
+                        <h3>Technical Infrastructure</h3>
                         <ul class="">
-                            <li class=""><a href=".">Historical Sci-Fi</a></li>
-                            <li class=""> <a href=".">History</a></li>
-                            <li class=""><a href=".">Kid's Sci-Fi & Fantasy</a> </li>
-                            <li class=""><a href=".">Older Children's</a></li>
+                            <li class=""><a href=".">Cloud Computing</a></li>
+                            <li class=""> <a href=".">Networking</a></li>
+                            <li class=""><a href=".">DevOps</a> </li>
+                            <li class=""><a href=".">Mobile Development</a></li>
                         </ul>
                     </div>
                 </div>
             </div>
             <div class="category-col">
                 <div class="category-card">
-                    <img src="https://covers.bookcoverzone.com/slir/w450/png24-front/bookcover0020424.jpg" alt="">
+                    <img src="https://i5.walmartimages.com/seo/IOT-Internet-Of-Things-Architecture-Raspberry-Pi-Introduction-Installation-Arduino-vs-Windows-10-IoT-Core-kit-Paperback-9798683263737_120d7c3e-b545-486e-a2c6-a3ecc8e9b1ef.6806b796716bd16428868043be1f5358.jpeg" alt="">
                     <div class="category-card-info">
-                        <h3>SCI-FI & FANTASY</h3>
+                        <h3>Emerging Tech & UX</h3>
                         <ul class="">
-                            <li class=""><a href=".">Historical Sci-Fi</a></li>
-                            <li class=""> <a href=".">History</a></li>
-                            <li class=""><a href=".">Kid's Sci-Fi & Fantasy</a> </li>
-                            <li class=""><a href=".">Older Children's</a></li>
+                            <li class=""><a href=".">Internet of Things</a></li>
+                            <li class=""> <a href=".">Quantum Computing</a></li>
+                            <li class=""><a href=".">User Experience</a> </li>
+                            <li class=""><a href=".">Software Development</a></li>
                         </ul>
                     </div>
                 </div>

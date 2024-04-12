@@ -24,7 +24,7 @@ if (!isset($_SESSION['logged_in'])) {
             if (password_verify($password, $row['password'])) { // Assuming passwords are stored securely hashed
                 // Set session variable to mark user as logged in
                 $_SESSION['logged_in'] = true;
-                // Redirect user to the desired page
+                $_SESSION['success_message'] = "Login Successful.";
                 header("Location: bookadd.php");
                 exit;
             } else {
@@ -54,6 +54,9 @@ $mysqli->close();
         <h2 class="page-header">LOGIN</h2>
 
         <form class="form" method="post">
+            <small>Please Login to Add a book</small>
+            <br>
+            <br>
             <label for="username">Username</label>
             <input type="text" id="username" name="username" required>
             <label for="password">Password</label>

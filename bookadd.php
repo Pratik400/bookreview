@@ -13,6 +13,14 @@ if (!isset($_SESSION['logged_in'])) {
     exit;
 }
 
+// Check if success message is set and display it
+if (isset($_SESSION['success_message'])) {
+    echo "<div class='message success' id='successMessage'>" . $_SESSION['success_message'] . "</div>";
+    // Unset the session variable to clear the message
+    unset($_SESSION['success_message']);
+}
+
+
 // Include the database connection file
 require_once("dbConnection.php");
 
@@ -71,7 +79,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST" && isset($_POST["submit"])) {
         }
         echo "</div>";
     } elseif (isset($_GET["success"]) && $_GET["success"] === "true") {
-        echo "<p style='color: green;'>Book added successfully.</p>";
+        echo "<p class='message success' id='successMessage'>Book added successfully.</p>";
     }
     ?>
 
@@ -90,5 +98,12 @@ if ($_SERVER["REQUEST_METHOD"] == "POST" && isset($_POST["submit"])) {
         </form>
     </div>
 </div>
+
+<script>
+    setTimeout(function() {
+        var element = document.getElementById('successMessage');
+        element.style.display = 'none';
+    }, 3000); // 3 seconds
+</script>
 
 <?php include 'footer.php'; ?>

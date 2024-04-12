@@ -9,15 +9,56 @@
      <meta name="description" content="Your website description here">
      <meta name="keywords" content="keywords, here, separated, by, commas">
      <meta name="author" content="Pratik">
+     <link rel="icon" href="/assets/img/fab.jpg" type="image/x-icon">
      <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css" integrity="sha512-SnH5WK+bZxgPHs44uWIX+LLJAJ9/2PkPKZ5QiAj6Ta86w+fsb2TkcmfRyVX3pBnMFcV7oQPJkl9QevSCWr3W6A==" crossorigin="anonymous" referrerpolicy="no-referrer" />
-     <link rel="stylesheet" href="./style.css">
+     <!-- <link rel="stylesheet" href="/assets/css/style.css"> -->
+     <link id="css-link" rel="stylesheet" type="text/css" href="">
+
+
+     <script>
+         // Default CSS file
+         var defaultCSS = '/assets/css/style1.css';
+         // Function to toggle between CSS files
+         function toggleCSS() {
+             var currentCSS = localStorage.getItem('currentCSS');
+             var newCSS;
+
+             // Check which CSS file is currently in use and toggle to the other one
+             if (currentCSS === '/assets/css/style1.css') {
+                 newCSS = '/assets/css/style2.css';
+             } else {
+                 newCSS = '/assets/css/style1.css';
+             }
+
+             // Set the new CSS file in the localStorage
+             localStorage.setItem('currentCSS', newCSS);
+
+             // Change the href attribute of the link tag to apply the new CSS file
+             document.getElementById('css-link').setAttribute('href', newCSS);
+         }
+
+         // On page load, check if there's a preferred CSS file in localStorage and apply it
+         document.addEventListener('DOMContentLoaded', function() {
+             var currentCSS = localStorage.getItem('currentCSS') || defaultCSS; // Get current CSS or default
+
+             // If a CSS file is found in localStorage, apply it
+             if (currentCSS) {
+                 document.getElementById('css-link').setAttribute('href', currentCSS);
+             } else {
+                 // Otherwise, default to a specific CSS file
+                 localStorage.setItem('currentCSS', '/assets/css/style1.css');
+                 document.getElementById('css-link').setAttribute('href', '/assets/css/style1.css');
+             }
+         });
+     </script>
  </head>
 
  <body>
      <section class="navigation">
          <div class="nav-container">
              <div class="brand">
-                 <a href="/">Logo</a>
+                 <span href="/">BOOKBUDDY</span>
+                 <button onclick="toggleCSS()">Toggle CSS</button>
              </div>
              <nav>
                  <div class="nav-mobile">

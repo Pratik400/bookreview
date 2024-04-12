@@ -6,7 +6,7 @@ session_start();
 
 // Check if success message is set and display it
 if (isset($_SESSION['success_message'])) {
-    echo "<div style='color: green;'>" . $_SESSION['success_message'] . "</div>";
+    echo "<div class='message success' id='successMessage'>" . $_SESSION['success_message'] . "</div>";
     // Unset the session variable to clear the message
     unset($_SESSION['success_message']);
 }
@@ -84,16 +84,14 @@ if (!$result) {
 <script>
     // JavaScript to handle form submission and AJAX request
     document.getElementById('searchForm').addEventListener('submit', function(event) {
-        event.preventDefault(); // Prevent default form submission
+        event.preventDefault();
 
         var searchQuery = document.getElementById('searchQuery').value.trim();
 
-        // AJAX request to fetch search results
         var xhr = new XMLHttpRequest();
         xhr.open('GET', 'search.php?query=' + encodeURIComponent(searchQuery), true);
         xhr.onload = function() {
             if (xhr.status === 200) {
-                // Update book list with search results
                 document.getElementById('bookTable').innerHTML = xhr.responseText;
             } else {
                 console.log('Request failed. Returned status of ' + xhr.status);
@@ -101,4 +99,10 @@ if (!$result) {
         };
         xhr.send();
     });
+
+
+    setTimeout(function() {
+        var element = document.getElementById('successMessage');
+        element.style.display = 'none';
+    }, 3000); // 3 seconds
 </script>
