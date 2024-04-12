@@ -15,6 +15,7 @@ if (isset($_SESSION['success_message'])) {
 <?php
 require_once("dbConnection.php");
 
+// Initial SQL query to fetch all books
 $sql = "SELECT 
             b.bookId,
             b.title AS book_title,
@@ -38,12 +39,18 @@ if (!$result) {
     die("Error executing query: " . mysqli_error($mysqli));
 }
 ?>
+
 <div class="container">
     <h1 class="page-header">BOOK LIST</h1>
+    <!-- Search form -->
     <section class="book-container">
         <div id="successMessage" style="display: none; color: green;">
             Book added successfully!
         </div>
+        <form id="searchForm">
+            <input type="text" id="searchQuery" required placeholder="Search for a book or author...">
+            <button type="submit">Search</button>
+        </form>
         <table>
             <thead>
                 <tr>
@@ -54,9 +61,9 @@ if (!$result) {
                     <th></th>
                 </tr>
             </thead>
-            <tbody>
+            <tbody id="bookTable">
                 <?php
-                // Assuming $mysqli is your database connection and $result contains the fetched data
+                // Displaying initial results
                 while ($row = mysqli_fetch_assoc($result)) {
                     echo "<tr>";
                     echo "<td>" . $row['bookId'] . "</td>";
@@ -71,4 +78,27 @@ if (!$result) {
         </table>
     </section>
 </div>
+
 <?php include 'footer.php'; ?>
+
+<script>
+    // JavaScript to handle form submission and AJAX request
+    document.getElementById('searchForm').addEventListener('submit', function(event) {
+        event.preventDefault(); // Prevent default form submission
+
+        var searchQuery = document.getElementById('searchQuery').value.trim();
+
+        // AJAX request to fetch search results
+        var xhr = new XMLHttpRequest();
+        xhr.open('GET', 'search.php?query=' + encodeURIComponent(searchQuery), true);
+        xhr.onload = function() {
+            if (xhr.status === 200) {
+                // Update book list with search results
+                document.getElementById('bookTable').innerHTML = xhr.responseText;
+            } else {
+                console.log('Request failed. Returned status of ' + xhr.status);
+            }
+        };
+        xhr.send();
+    });
+</script>

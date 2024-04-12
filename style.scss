@@ -428,7 +428,6 @@ footer {
     display: flex;
     align-items: center;
 
-
     .intro-body {
         display: flex;
         align-items: center;
@@ -476,6 +475,11 @@ footer {
                 margin-top: 0;
             }
         }
+
+        .btn-main {
+
+            width: fit-content;
+        }
     }
 }
 
@@ -518,6 +522,11 @@ footer {
                 margin-top: 0;
             }
         }
+
+        .btn-main {
+
+            width: fit-content;
+        }
     }
 }
 
@@ -533,24 +542,50 @@ footer {
         margin-bottom: 15px;
         border: 1px solid rgb(241, 241, 241); // width: 18rem;
         background: #fff;
+        height: 100%;
+        transition: all .21s linear;
+
+        &:hover {
+            box-shadow: 0 1px 3px rgba(0, 0, 0, 0.02), 0 1px 2px rgba(0, 0, 0, 0.04);
+
+            .book-card-body h4 {
+                color: $main;
+            }
+        }
 
         .book-card-img {
             width: 100%;
-            padding: 20px;
-            max-height: 300px;
+            padding: 20px 10px 5px 10px;
+            max-height: 250px;
             object-fit: contain;
+            // border: 1px solid red;
         }
 
         .book-card-body {
-            padding: 5px 10px;
+            display: flex;
+            flex-direction: column;
+            height: 110px;
+            // border: 1px solid red;
+            padding: 5px 20px 0 20px;
+
+            h4,
+            p {
+                margin: 0;
+                padding: 0;
+                @extend .textwrap;
+            }
+
+            small {
+                margin-top: 20px;
+            }
+
+            a {
+                margin-top: auto;
+            }
         }
 
     }
 
-    .book-card .card-img-top {
-        width: 100%;
-        height: auto;
-    }
 }
 
 .featured-categories {
@@ -770,6 +805,39 @@ footer {
 
         &:hover {
             text-decoration: underline !important;
+        }
+    }
+}
+
+#searchForm {}
+
+
+
+/* Style for the search button */
+#searchForm {
+    margin-bottom: 20px;
+    width: 100%;
+    display: flex;
+
+    input {
+        padding: 10px;
+        width: 100%;
+        min-width: 300px;
+        border: 1px solid #ccc;
+        border-radius: 0;
+        margin-right: 10px;
+    }
+
+    button {
+        padding: 10px 20px;
+        background-color: $maind;
+        color: white;
+        border: none;
+        border-radius: 0;
+        cursor: pointer;
+
+        &:hover {
+            background-color: $maind;
         }
     }
 }

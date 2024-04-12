@@ -64,7 +64,6 @@ if ($_SERVER["REQUEST_METHOD"] == "POST" && isset($_POST["submit"])) {
 <div class="container">
     <?php
 
-    // Display validation errors, if any
     if (!empty($errors)) {
         echo "<div style='color: red;'>";
         foreach ($errors as $error) {
@@ -81,10 +80,10 @@ if ($_SERVER["REQUEST_METHOD"] == "POST" && isset($_POST["submit"])) {
 
         <form class="form" method="post" autocomplete="off" action="<?php echo htmlspecialchars($_SERVER["PHP_SELF"]); ?>">
             <label for="bookId">Book ID:</label> <br>
-            <input type="text" id="bookId" name="bookId" maxlength="4" style="width: 200px;">
+            <input type="text" id="bookId" name="bookId" maxlength="4" style="width: 200px;" required>
             <br>
             <label for="title">Title:</label>
-            <input type="text" id="title" name="title" maxlength="200">
+            <input type="text" id="title" name="title" maxlength="200" required>
 
             <button class="btn" type="submit" name="submit">Submit</button>
             <button class="rst" type="reset" name="reset">Reset</button>

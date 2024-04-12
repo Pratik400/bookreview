@@ -149,7 +149,8 @@ li {
   list-style: none;
 }
 
-.textwrap {
+.textwrap, .featured-books .book-card .book-card-body h4,
+.featured-books .book-card .book-card-body p {
   word-wrap: break-word;
   text-overflow: ellipsis;
   white-space: nowrap;
@@ -396,6 +397,10 @@ footer {
   margin-bottom: 20px;
   margin-top: 0;
 }
+.intro-section .intro-body .btn-main {
+  width: -moz-fit-content;
+  width: fit-content;
+}
 
 .intro-section-2 {
   padding: 5% 10%;
@@ -431,6 +436,10 @@ footer {
   margin-bottom: 20px;
   margin-top: 0;
 }
+.intro-section-2 .intro-body .btn-main {
+  width: -moz-fit-content;
+  width: fit-content;
+}
 
 .featured-books {
   padding: 30px 0 40px 0;
@@ -443,20 +452,38 @@ footer {
   margin-bottom: 15px;
   border: 1px solid rgb(241, 241, 241);
   background: #fff;
+  height: 100%;
+  transition: all 0.21s linear;
+}
+.featured-books .book-card:hover {
+  box-shadow: 0 1px 3px rgba(0, 0, 0, 0.02), 0 1px 2px rgba(0, 0, 0, 0.04);
+}
+.featured-books .book-card:hover .book-card-body h4 {
+  color: #903;
 }
 .featured-books .book-card .book-card-img {
   width: 100%;
-  padding: 20px;
-  max-height: 300px;
+  padding: 20px 10px 5px 10px;
+  max-height: 250px;
   -o-object-fit: contain;
      object-fit: contain;
 }
 .featured-books .book-card .book-card-body {
-  padding: 5px 10px;
+  display: flex;
+  flex-direction: column;
+  height: 110px;
+  padding: 5px 20px 0 20px;
 }
-.featured-books .book-card .card-img-top {
-  width: 100%;
-  height: auto;
+.featured-books .book-card .book-card-body h4,
+.featured-books .book-card .book-card-body p {
+  margin: 0;
+  padding: 0;
+}
+.featured-books .book-card .book-card-body small {
+  margin-top: 20px;
+}
+.featured-books .book-card .book-card-body a {
+  margin-top: auto;
 }
 
 .featured-categories {
@@ -612,6 +639,32 @@ footer {
 }
 .bookmark a:hover {
   text-decoration: underline !important;
+}
+
+/* Style for the search button */
+#searchForm {
+  margin-bottom: 20px;
+  width: 100%;
+  display: flex;
+}
+#searchForm input {
+  padding: 10px;
+  width: 100%;
+  min-width: 300px;
+  border: 1px solid #ccc;
+  border-radius: 0;
+  margin-right: 10px;
+}
+#searchForm button {
+  padding: 10px 20px;
+  background-color: #660022;
+  color: white;
+  border: none;
+  border-radius: 0;
+  cursor: pointer;
+}
+#searchForm button:hover {
+  background-color: #660022;
 }
 
 .book-view-container {

@@ -122,8 +122,13 @@ if (!$resultReviewers) {
 
     </section>
 
-    <div class="bookmark"><a href="/booklist.php"> Back to List</a></div>
+    <div class="bookmark"><a href="#" onclick="goBack()"> Back to List</a></div>
 
+    <script>
+        function goBack() {
+            window.history.back();
+        }
+    </script>
 </div>
 
 <?php include 'footer.php'; ?>
