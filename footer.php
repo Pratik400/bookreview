@@ -5,26 +5,20 @@
         </p>
 
         <?php
-        // Start session
         // session_start();
-
-        // Check if user is logged in
-        if (isset($_SESSION['logged_in'])) {
-            // User is logged in, display logout button
-            echo '<form method="post">
-            <button type="submit" name="logout">Logout</button>
-          </form>';
-        }
-
-        // Logout logic
         if (isset($_POST['logout'])) {
-            // Destroy the session
+            session_unset();
             session_destroy();
-            // Redirect to login page or any other page
-            header("Location: index.php");
+            echo "<script>window.location.href = 'authen.php';</script>";
             exit;
         }
         ?>
+
+        <?php if (isset($_SESSION['logged_in']) && $_SESSION['logged_in']) : ?>
+            <form method="post" style="display: inline;">
+                <button type="submit" name="logout" class="button">Logout</button>
+            </form>
+        <?php endif; ?>
 
     </div>
 </footer>

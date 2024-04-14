@@ -4,6 +4,8 @@
 // $databaseUsername = '20634982';
 // $databasePassword = 'webtech1@#';
 
+
+
 $databaseHost = 'localhost';
 $databaseName = 'bookreview';
 $databaseUsername = 'root';

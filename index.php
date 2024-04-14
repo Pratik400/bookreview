@@ -10,13 +10,13 @@ $sql = "SELECT
                 COUNT(r.rating) AS rating_count,
                 GROUP_CONCAT(DISTINCT a.authorName ORDER BY a.authorName) AS authors
             FROM 
-                Book b
+                book b
             LEFT JOIN 
-                Authorship ash ON b.bookId = ash.bookId
+                authorship ash ON b.bookId = ash.bookId
             LEFT JOIN 
-                Author a ON ash.authorId = a.authorId
+                author a ON ash.authorId = a.authorId
             LEFT JOIN 
-                Report r ON b.bookId = r.bookId
+                report r ON b.bookId = r.bookId
             GROUP BY 
                 b.bookId, b.title
                 LIMIT 4";
@@ -35,13 +35,13 @@ $sql2 = "SELECT
                 COUNT(r.rating) AS rating_count,
                 GROUP_CONCAT(DISTINCT a.authorName ORDER BY a.authorName) AS authors
             FROM 
-                Book b
+                book b
             LEFT JOIN 
-                Authorship ash ON b.bookId = ash.bookId
+                authorship ash ON b.bookId = ash.bookId
             LEFT JOIN 
-                Author a ON ash.authorId = a.authorId
+                author a ON ash.authorId = a.authorId
             LEFT JOIN 
-                Report r ON b.bookId = r.bookId
+                report r ON b.bookId = r.bookId
             GROUP BY 
                 b.bookId, b.title
             ORDER BY 
@@ -55,9 +55,9 @@ if (!$result2) {
 ?>
 
 
-<section class="intro-section container-fluid" style="background-size: cover ;background-image: url(./assets/img/introbg1.jpg)">
+<section class="intro-section container-fluid" style="background-size: cover ;background-image: url(assets/img/introbg1.jpg)">
     <div class="intro-body">
-        <img src="./assets/img/introbook.avif" alt="">
+        <img src="assets/img/introbook.avif" alt="">
         <div class="">
             <p class="">SPECIAL PRICE</p>
             <p class="">Chip War: The Fight for the World's Most Critical Technology (4.5)</p>
@@ -78,7 +78,7 @@ if (!$result2) {
                         <?php if (!empty($row['image_src'])) : ?>
                             <img class="book-card-img" src="<?php echo $row['image_src']; ?>" alt="Book Cover">
                         <?php else : ?>
-                            <img class="book-card-img" src="./assets/img/bookplaceholder.jpg" alt="Book Cover">
+                            <img class="book-card-img" src="assets/img/bookplaceholder.jpg" alt="Book Cover">
                         <?php endif; ?>
                         <div class="book-card-body">
                             <h4 title="<?php echo $row['book_title']; ?>">
@@ -110,7 +110,7 @@ if (!$result2) {
         <div class="custom-row">
             <div class="category-col">
                 <div class="category-card">
-                    <img src="./assets/img/cat1.jpg" alt="">
+                    <img src="assets/img/cat1.jpg" alt="">
                     <div class="category-card-info">
                         <h3>Tech Infrastructure</h3>
                         <ul class="">
@@ -124,7 +124,7 @@ if (!$result2) {
             </div>
             <div class="category-col">
                 <div class="category-card">
-                    <img src="./assets/img/cat2.jpg" alt="">
+                    <img src="assets/img/cat2.jpg" alt="">
                     <div class="category-card-info">
                         <h3>Cybersecurity</h3>
                         <ul class="">
@@ -138,7 +138,7 @@ if (!$result2) {
             </div>
             <div class="category-col">
                 <div class="category-card">
-                    <img src="./assets/img/cat3.webp" alt="">
+                    <img src="assets/img/cat3.webp" alt="">
                     <div class="category-card-info">
                         <h3>Emerging Tech & UX</h3>
                         <ul class="">
@@ -164,7 +164,7 @@ if (!$result2) {
                         <?php if (!empty($row['image_src'])) : ?>
                             <img class="book-card-img" src="<?php echo $row['image_src']; ?>" alt="Book Cover">
                         <?php else : ?>
-                            <img class="book-card-img" src="./assets/img/bookplaceholder.jpg" alt="Book Cover">
+                            <img class="book-card-img" src="assets/img/bookplaceholder.jpg" alt="Book Cover">
                         <?php endif; ?>
                         <div class="book-card-body">
                             <h4 title="<?php echo $row['book_title']; ?>">
@@ -193,7 +193,7 @@ if (!$result2) {
     </div>
 </section>
 
-<section class="intro-section-2 container-fluid" style="background-size: cover ;background-image: url(./assets/img/introbg2.png)">
+<section class="intro-section-2 container-fluid" style="background-size: cover ;background-image: url(assets/img/introbg2.png)">
     <div class="intro-body">
         <div class="">
             <p class="">SPECIAL EDITION</p>

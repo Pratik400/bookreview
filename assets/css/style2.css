@@ -28,7 +28,6 @@
   min-height: 1px;
   padding-right: 10px;
   padding-left: 10px;
-  /* Media queries for column */
 }
 
 *,
@@ -110,7 +109,6 @@ li {
 }
 .btn-main::after {
   content: "\f054";
-  /* Unicode for Font Awesome chevron icon */
   font-family: "Font Awesome 6 Free";
   -webkit-font-smoothing: antialiased;
   display: var(--fa-display, inline-block);
@@ -166,7 +164,7 @@ li {
   background: green;
   color: #fff;
   padding: 5px 10px;
-  z-index: 1;
+  z-index: 5;
 }
 
 .navigation {
@@ -332,7 +330,7 @@ footer form {
 .intro-section {
   display: flex;
   align-items: center;
-  padding: 20px;
+  padding: 40px 20px;
   width: 100%;
   order: 1;
 }
@@ -348,15 +346,14 @@ footer form {
 .intro-section .intro-body img {
   width: -moz-fit-content;
   width: fit-content;
-  max-height: 400px;
+  max-height: 250px;
   padding: 0 10px;
   -o-object-fit: contain;
      object-fit: contain;
   margin: 0 auto;
 }
 .intro-section .intro-body p {
-  color: #1a98ff;
-  font-weight: 500;
+  color: #002a4d;
   max-width: 500px;
 }
 .intro-section .intro-body p:nth-child(1) {
@@ -369,18 +366,19 @@ footer form {
   padding: 5px 10px 3px 10px;
 }
 .intro-section .intro-body p:nth-child(2) {
-  font-weight: 600;
-  font-size: 30px;
+  font-weight: 900;
+  font-size: 25px;
   line-height: 1.2;
   margin-bottom: 5px;
   margin-top: 5px;
 }
 .intro-section .intro-body p:nth-child(3) {
-  font-size: 20px;
+  font-size: 15px;
   margin: 5px 0px;
+  font-weight: 600;
 }
 .intro-section .intro-body p:nth-child(4) {
-  font-weight: 600;
+  font-weight: 700;
   font-size: 30px;
   line-height: 1.2;
   margin-bottom: 20px;
@@ -529,6 +527,7 @@ footer form {
 .featured-categories .category-card .category-card-info ul li a:hover {
   color: #1a98ff;
 }
+
 .about-container {
   background: #fff;
   padding: 20px 30px;
@@ -687,7 +686,6 @@ footer form {
   text-decoration: underline !important;
 }
 
-/* Style for the search button */
 #searchForm {
   margin-bottom: 20px;
   width: 100%;
@@ -770,6 +768,7 @@ footer form {
   color: #ffc808;
   font-size: 18px;
 }
+
 .reviewer-container {
   margin-top: 20px;
   padding: 0px 20px;
@@ -795,10 +794,11 @@ footer form {
   margin: 0;
 }
 .reviewer-container .reviewer img {
-  height: 60px;
-  width: 60px;
-  -o-object-fit: contain;
-     object-fit: contain;
+  height: 50px;
+  width: 50px;
+  border-radius: 100%;
+  -o-object-fit: cover;
+     object-fit: cover;
   margin-right: 10px;
 }
 .reviewer-container .reviewer .fa-star {

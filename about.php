@@ -5,21 +5,6 @@
     <div class="about-container">
         <h1>PRATIK BAJRACHARYA</h1>
         <h2>Web Developer & Designer</h2>
-        <!-- <div>
-            <ul>
-                <li>HTML</li>
-                <li>CSS, SCSS</li>
-                <li>JS, ReactJS, </li>VUEJS
-                <li>JAVASCRIPT</li>
-                <li>WORDPRESS</li>
-                <li>Database</li>
-                <li>Cpanel</li>
-                <li>PHOTOSHOP</li>
-                <li>ILLUSTRATOR</li>
-                <li>ADOBE XD</li>
-                <li>LIGHTROOM</li>
-            </ul>
-        </div> -->
         <div class="info-box">
             <div class="info-title">WORK EXPERIENCE</div>
 

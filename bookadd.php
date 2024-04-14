@@ -3,66 +3,48 @@
 
 
 <?php
-// Start session
 session_start();
 
 // Check if user is logged in
 if (!isset($_SESSION['logged_in'])) {
-    // User is not logged in, redirect to login page
-    header("Location: bookadd.php"); // Redirect to your login page
+    header("Location: bookadd.php"); 
     exit;
 }
 
 // Check if success message is set and display it
 if (isset($_SESSION['success_message'])) {
     echo "<div class='message success' id='successMessage'>" . $_SESSION['success_message'] . "</div>";
-    // Unset the session variable to clear the message
     unset($_SESSION['success_message']);
 }
 
 
-// Include the database connection file
 require_once("dbConnection.php");
 
 $errors = array();
 
 // Check if the form is submitted
 if ($_SERVER["REQUEST_METHOD"] == "POST" && isset($_POST["submit"])) {
-    // Collect form data
     $bookId = trim($_POST["bookId"]);
     $title = trim($_POST["title"]);
 
-    // Validate book ID
     if (empty($bookId) || strlen($bookId) > 4) {
         $errors[] = "Book ID must not be empty and should not exceed 4 characters.";
     }
-
-    // Validate title
     if (empty($title) || strlen($title) > 200) {
         $errors[] = "Title must not be empty and should not exceed 200 characters.";
     }
-
-    // If there are no validation errors, proceed to insert into the database
     if (empty($errors)) {
-        // SQL query to insert book details into the database
-        $sql = "INSERT INTO Book (bookId, title) VALUES ('$bookId', '$title')";
+        $sql = "INSERT INTO book (bookId, title) VALUES ('$bookId', '$title')";
 
-        // Execute the query
         if (mysqli_query($mysqli, $sql)) {
-            // Set success message in session variable
             $_SESSION['success_message'] = "Book added successfully.";
-            // Redirect to the booklist.php page to avoid resubmission
             header("Location: booklist.php");
             exit();
         } else {
             $errors[] = "Error: " . mysqli_error($mysqli);
         }
     }
-
-    // Set error messages in session variable
     $_SESSION['errors'] = $errors;
-
-    // Redirect back to the add_book.php page to display errors
     header("Location: bookadd.php");
     exit();
 }
@@ -103,7 +85,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST" && isset($_POST["submit"])) {
     setTimeout(function() {
         var element = document.getElementById('successMessage');
         element.style.display = 'none';
-    }, 3000); // 3 seconds
+    }, 3000);
 </script>
 
 <?php include 'footer.php'; ?>

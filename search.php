@@ -1,18 +1,13 @@
 <?php
-// Ensure that no output has been sent before sending headers
 ob_start();
-
-// Start session if needed
 session_start();
 
-// Include necessary files
 require_once("dbConnection.php");
 
-// Check if the search query is provided
 if (isset($_GET['query'])) {
     $searchQuery = $_GET['query'];
 
-    // SQL query to search for books based on title or author
+    // SQL query to search for books based on title, book ID or author
     $sql = "SELECT 
                 b.bookId,
                 b.title AS book_title,
@@ -20,15 +15,17 @@ if (isset($_GET['query'])) {
                 COUNT(r.rating) AS rating_count,
                 GROUP_CONCAT(DISTINCT a.authorName ORDER BY a.authorName) AS authors
             FROM 
-                Book b
+                book b
             LEFT JOIN 
-                Authorship ash ON b.bookId = ash.bookId
+                authorship ash ON b.bookId = ash.bookId
             LEFT JOIN 
-                Author a ON ash.authorId = a.authorId
+                author a ON ash.authorId = a.authorId
             LEFT JOIN 
-                Report r ON b.bookId = r.bookId
+                report r ON b.bookId = r.bookId
             WHERE 
-                b.title LIKE '%$searchQuery%' OR a.authorName LIKE '%$searchQuery%'
+                 b.title LIKE '%$searchQuery%' OR 
+                a.authorName LIKE '%$searchQuery%' OR 
+                b.bookId LIKE '%$searchQuery%'
             GROUP BY 
                 b.bookId, b.title";
 
@@ -38,7 +35,7 @@ if (isset($_GET['query'])) {
         die("Error executing query: " . mysqli_error($mysqli));
     }
 
-    // Build HTML for the updated book list based on search results
+    // HTML for the updated book list table
     $output = '';
     if (mysqli_num_rows($result) > 0) {
         while ($row = mysqli_fetch_assoc($result)) {
@@ -54,12 +51,10 @@ if (isset($_GET['query'])) {
         $output = "<tr><td colspan='5'>No books found</td></tr>";
     }
 
-    // Return the updated book list HTML
+    // Return the HTML
     echo $output;
 } else {
-    // If search query is not provided, return an error message
     echo "No search query provided";
 }
 
-// Flush the output buffer and send the output to the browser
 ob_end_flush();

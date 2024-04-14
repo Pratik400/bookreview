@@ -8,41 +8,32 @@ require_once("dbConnection.php");
 if (!isset($_SESSION['logged_in'])) {
     // Check if form is submitted
     if (isset($_POST['username']) && isset($_POST['password'])) {
-        // Get username and password from the form
         $username = $_POST['username'];
         $password = $_POST['password'];
 
-        // Prepare a statement to select user from the database
         $stmt = $mysqli->prepare("SELECT * FROM users WHERE username=?");
         $stmt->bind_param("s", $username);
         $stmt->execute();
         $result = $stmt->get_result();
 
-        // Check if user exists and password is correct
         if ($result->num_rows == 1) {
             $row = $result->fetch_assoc();
-            if (password_verify($password, $row['password'])) { // Assuming passwords are stored securely hashed
-                // Set session variable to mark user as logged in
+            if (password_verify($password, $row['password'])) { 
                 $_SESSION['logged_in'] = true;
                 $_SESSION['success_message'] = "Login Successful.";
                 header("Location: bookadd.php");
                 exit;
             } else {
-                // Password is incorrect, show alert
                 echo "<script>alert('Invalid username or password');</script>";
             }
         } else {
-            // Username not found, show alert
             echo "<script>alert('Invalid username or password');</script>";
         }
     }
 } else {
-    // User is already logged in, redirect to the desired page
     header("Location: bookadd.php");
     exit;
 }
-
-// Close connection
 $mysqli->close();
 
 

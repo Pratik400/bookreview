@@ -11,9 +11,9 @@ $sqlBook = "SELECT
                 AVG(r.rating) AS average_rating,
                 COUNT(r.rating) AS rating_count
             FROM 
-                Book b
+                book b
             LEFT JOIN 
-                Report r ON b.bookId = r.bookId
+                report r ON b.bookId = r.bookId
             WHERE 
                 b.bookId = '$bookId'
             GROUP BY 
@@ -40,8 +40,8 @@ if (mysqli_num_rows($resultBook) > 0) {
 
 // Authors query
 $sqlAuthors = "SELECT DISTINCT a.authorName
-                FROM Authorship ash
-                INNER JOIN Author a ON ash.authorId = a.authorId
+                FROM authorship ash
+                INNER JOIN author a ON ash.authorId = a.authorId
                 WHERE ash.bookId = '$bookId'";
 
 // Execute the query to fetch distinct authors
@@ -54,8 +54,8 @@ if (!$resultAuthors) {
 
 // Reviewers query
 $sqlReviewers = "SELECT rv.reviewerName, r.rating
-                FROM Report r
-                INNER JOIN Reviewer rv ON r.reviewerId = rv.reviewerId
+                FROM report r
+                INNER JOIN reviewer rv ON r.reviewerId = rv.reviewerId
                 WHERE r.bookId = '$bookId'";
 
 // Execute the query to fetch reviewers and their ratings
@@ -74,7 +74,7 @@ if (!$resultReviewers) {
     <div class="bookmark"><a href="/booklist.php">Books</a> <i class="fa-solid fa-chevron-right"></i> <span><?php echo $bookId; ?></span> <i class="fa-solid fa-chevron-right"></i> <span><?php echo $bookTitle; ?></span> </div>
     <section class="book-view-container">
         <div class="book-img">
-            <img src="./assets/img/bookplaceholder.jpg" alt="">
+            <img src="assets/img/bookplaceholder.jpg" alt="">
         </div>
         <div class="book-details">
             <p><?php echo $bookId; ?></p>
@@ -110,7 +110,7 @@ if (!$resultReviewers) {
             // Output reviewers and their ratings
             while ($rowReviewer = mysqli_fetch_assoc($resultReviewers)) {
                 echo "<div class='reviewer'>";
-                echo " <img src='./assets/img/reviewerplaceholder.jpg' alt=''> ";
+                echo " <img src='assets/img/reviewerplaceholder.jpg' alt=''> ";
                 echo "<div><p>" . $rowReviewer['reviewerName'] . "</p>";
                 echo "<p><i class='fa-solid fa-star '></i>" . $rowReviewer['rating'] . "/5</p>";
                 echo "</div></div>";

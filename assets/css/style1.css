@@ -209,6 +209,7 @@ li {
   background: green;
   color: #fff;
   padding: 5px 10px;
+  z-index: 5;
 }
 
 .navigation {
@@ -392,7 +393,7 @@ footer {
   margin: 0 auto;
 }
 .intro-section .intro-body p {
-  color: #903;
+  color: #660022;
   font-weight: 500;
   max-width: 500px;
 }
@@ -540,6 +541,7 @@ footer {
 .featured-categories .category-card .category-card-info ul li a:hover {
   color: #903;
 }
+
 .about-container {
   background: #fff;
   padding: 20px 30px;
@@ -602,6 +604,7 @@ footer {
 .about-container .info-box .info p:nth-child(3) i {
   display: none;
 }
+
 .book-container {
   padding: 0px 20px;
   width: 100%;
@@ -679,7 +682,6 @@ footer {
   text-decoration: underline !important;
 }
 
-/* Style for the search button */
 #searchForm {
   margin-bottom: 20px;
   width: 100%;
@@ -762,6 +764,7 @@ footer {
   color: #ffc808;
   font-size: 18px;
 }
+
 .reviewer-container {
   margin-top: 20px;
   padding: 0px 20px;

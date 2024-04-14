@@ -1,13 +1,11 @@
 <?php include 'navbar.php'; ?>
 
 <?php
-// Start the session
 session_start();
 
 // Check if success message is set and display it
 if (isset($_SESSION['success_message'])) {
     echo "<div class='message success' id='successMessage'>" . $_SESSION['success_message'] . "</div>";
-    // Unset the session variable to clear the message
     unset($_SESSION['success_message']);
 }
 ?>
@@ -15,7 +13,7 @@ if (isset($_SESSION['success_message'])) {
 <?php
 require_once("dbConnection.php");
 
-// Initial SQL query to fetch all books
+// SQL query to fetch all books
 $sql = "SELECT 
             b.bookId,
             b.title AS book_title,
@@ -23,13 +21,13 @@ $sql = "SELECT
             COUNT(r.rating) AS rating_count,
             GROUP_CONCAT(DISTINCT a.authorName ORDER BY a.authorName) AS authors
         FROM 
-            Book b
+            book b
         LEFT JOIN 
-            Authorship ash ON b.bookId = ash.bookId
+            authorship ash ON b.bookId = ash.bookId
         LEFT JOIN 
-            Author a ON ash.authorId = a.authorId
+            author a ON ash.authorId = a.authorId
         LEFT JOIN 
-            Report r ON b.bookId = r.bookId
+            report r ON b.bookId = r.bookId
         GROUP BY 
             b.bookId, b.title";
 
@@ -42,13 +40,12 @@ if (!$result) {
 
 <div class="container">
     <h1 class="page-header">BOOK LIST</h1>
-    <!-- Search form -->
     <section class="book-container">
         <div id="successMessage" style="display: none; color: green;">
             Book added successfully!
         </div>
         <form id="searchForm">
-            <input type="text" id="searchQuery" required placeholder="Search for a book or author...">
+            <input type="text" id="searchQuery" required placeholder="Search for a Book, Book ID or Author/s ...">
             <button type="submit"><i class="fa-solid fa-magnifying-glass"></i></button>
         </form>
         <div style="overflow-x: auto; overflow-y: hidden;">
@@ -64,7 +61,6 @@ if (!$result) {
                 </thead>
                 <tbody id="bookTable">
                     <?php
-                    // Displaying initial results
                     while ($row = mysqli_fetch_assoc($result)) {
                         echo "<tr>";
                         echo "<td>" . $row['bookId'] . "</td>";
