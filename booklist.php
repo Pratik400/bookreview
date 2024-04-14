@@ -49,33 +49,35 @@ if (!$result) {
         </div>
         <form id="searchForm">
             <input type="text" id="searchQuery" required placeholder="Search for a book or author...">
-            <button type="submit">Search</button>
+            <button type="submit"><i class="fa-solid fa-magnifying-glass"></i></button>
         </form>
-        <table>
-            <thead>
-                <tr>
-                    <th>Book ID</th>
-                    <th>Book Name</th>
-                    <th>Rating</th>
-                    <th>Authors</th>
-                    <th></th>
-                </tr>
-            </thead>
-            <tbody id="bookTable">
-                <?php
-                // Displaying initial results
-                while ($row = mysqli_fetch_assoc($result)) {
-                    echo "<tr>";
-                    echo "<td>" . $row['bookId'] . "</td>";
-                    echo "<td>" . $row['book_title'] . "</td>";
-                    echo "<td>" . number_format($row['average_rating'], 1) . " <small>(" . $row['rating_count']   . ")</small>"  . "</td>";
-                    echo "<td>" . $row['authors'] . "</td>";
-                    echo "<td><a href=\"bookview.php?bookId=" . $row['bookId'] . "\">View</a></td>";
-                    echo "</tr>";
-                }
-                ?>
-            </tbody>
-        </table>
+        <div style="overflow-x: auto; overflow-y: hidden;">
+            <table>
+                <thead>
+                    <tr>
+                        <th>Book ID</th>
+                        <th>Book Name</th>
+                        <th>Rating</th>
+                        <th>Authors</th>
+                        <th></th>
+                    </tr>
+                </thead>
+                <tbody id="bookTable">
+                    <?php
+                    // Displaying initial results
+                    while ($row = mysqli_fetch_assoc($result)) {
+                        echo "<tr>";
+                        echo "<td>" . $row['bookId'] . "</td>";
+                        echo "<td>" . $row['book_title'] . "</td>";
+                        echo "<td>" . number_format($row['average_rating'], 1) . " <small>(" . $row['rating_count']   . ")</small>"  . "</td>";
+                        echo "<td>" . $row['authors'] . "</td>";
+                        echo "<td><a href=\"bookview.php?bookId=" . $row['bookId'] . "\">View</a></td>";
+                        echo "</tr>";
+                    }
+                    ?>
+                </tbody>
+            </table>
+        </div>
     </section>
 </div>
 

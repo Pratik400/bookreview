@@ -71,10 +71,10 @@ if (!$resultReviewers) {
 
 
 
-    <div class="bookmark">Books <i class="fa-solid fa-chevron-right"></i> <span><?php echo $bookId; ?></span> <i class="fa-solid fa-chevron-right"></i> <span><?php echo $bookTitle; ?></span> </div>
+    <div class="bookmark"><a href="/booklist.php">Books</a> <i class="fa-solid fa-chevron-right"></i> <span><?php echo $bookId; ?></span> <i class="fa-solid fa-chevron-right"></i> <span><?php echo $bookTitle; ?></span> </div>
     <section class="book-view-container">
         <div class="book-img">
-            <img src="https://d3iqwsql9z4qvn.cloudfront.net/wp-content/uploads/2023/02/27124632/audiobook-and-hardcover-web.png" alt="">
+            <img src="./assets/img/bookplaceholder.jpg" alt="">
         </div>
         <div class="book-details">
             <p><?php echo $bookId; ?></p>
@@ -110,7 +110,7 @@ if (!$resultReviewers) {
             // Output reviewers and their ratings
             while ($rowReviewer = mysqli_fetch_assoc($resultReviewers)) {
                 echo "<div class='reviewer'>";
-                echo " <img src='https://www.kbl.co.uk/wp-content/uploads/2017/11/Default-Profile-Male.jpg' alt=''> ";
+                echo " <img src='./assets/img/reviewerplaceholder.jpg' alt=''> ";
                 echo "<div><p>" . $rowReviewer['reviewerName'] . "</p>";
                 echo "<p><i class='fa-solid fa-star '></i>" . $rowReviewer['rating'] . "/5</p>";
                 echo "</div></div>";

@@ -11,13 +11,12 @@
      <meta name="author" content="Pratik">
      <link rel="icon" href="/assets/img/fab.jpg" type="image/x-icon">
      <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css" integrity="sha512-SnH5WK+bZxgPHs44uWIX+LLJAJ9/2PkPKZ5QiAj6Ta86w+fsb2TkcmfRyVX3pBnMFcV7oQPJkl9QevSCWr3W6A==" crossorigin="anonymous" referrerpolicy="no-referrer" />
-     <!-- <link rel="stylesheet" href="/assets/css/style.css"> -->
      <link id="css-link" rel="stylesheet" type="text/css" href="">
 
 
      <script>
          // Default CSS file
-         var defaultCSS = '/assets/css/style1.css';
+         var defaultCSS = '/assets/css/style2.css';
          // Function to toggle between CSS files
          function toggleCSS() {
              var currentCSS = localStorage.getItem('currentCSS');
@@ -56,9 +55,8 @@
  <body>
      <section class="navigation">
          <div class="nav-container">
-             <div class="brand">
+             <div class="brand" onclick="toggleCSS()">
                  <span href="/">BOOKBUDDY</span>
-                 <button onclick="toggleCSS()">Toggle CSS</button>
              </div>
              <nav>
                  <div class="nav-mobile">
@@ -72,7 +70,7 @@
                          <a href="about.php">About</a>
                      </li>
                      <li>
-                         <a href="booklist.php">Books table/ search</a>
+                         <a href="booklist.php">Books table</a>
                      </li>
                      <li>
                          <a href="authen.php">Add book</a>

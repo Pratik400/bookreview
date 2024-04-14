@@ -1,5 +1,4 @@
-@import url('https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap');
-
+@import url('https://fonts.googleapis.com/css2?family=Nunito:ital,wght@0,200..1000;1,200..1000&display=swap');
 
 
 //////////////////////////////////////////////////
@@ -21,29 +20,29 @@
     margin-bottom: 30px;
 }
 
-@media (min-width: 576px) {
-    .container {
-        max-width: 540px + 10px;
-    }
-}
+// @media (min-width: 576px) {
+//     .container {
+//         max-width: 540px + 10px;
+//     }
+// }
 
-@media (min-width: 768px) {
-    .container {
-        max-width: 720px + 10px;
-    }
-}
+// @media (min-width: 768px) {
+//     .container {
+//         max-width: 720px + 10px;
+//     }
+// }
 
-@media (min-width: 992px) {
-    .container {
-        max-width: 960px + 10px;
-    }
-}
+// @media (min-width: 992px) {
+//     .container {
+//         max-width: 960px + 10px;
+//     }
+// }
 
-@media (min-width: 1200px) {
-    .container {
-        max-width: 1140px + 10px;
-    }
-}
+// @media (min-width: 1200px) {
+//     .container {
+//         max-width: 1140px + 10px;
+//     }
+// }
 
 /* Custom class for row */
 .custom-row {
@@ -55,62 +54,62 @@
 
 /* Custom class for column */
 .book-col {
-    position: relative;
+    // position: relative;
     width: 100%;
     min-height: 1px;
     padding-right: 10px;
     padding-left: 10px;
 
     /* Media queries for column */
-    @media (min-width: 576px) {
-        flex: 0 0 50%;
-        max-width: 50%;
-    }
+    // @media (min-width: 576px) {
+    //     flex: 0 0 50%;
+    //     max-width: 50%;
+    // }
 
-    @media (min-width: 768px) {
-        flex: 0 0 33.333333%;
-        max-width: 33.333333%;
-    }
+    // @media (min-width: 768px) {
+    //     flex: 0 0 33.333333%;
+    //     max-width: 33.333333%;
+    // }
 
-    @media (min-width: 992px) {
-        flex: 0 0 25%;
-        max-width: 25%;
-    }
+    // @media (min-width: 992px) {
+    //     flex: 0 0 25%;
+    //     max-width: 25%;
+    // }
 
-    @media (min-width: 1200px) {
-        flex: 0 0 25%;
-        max-width: 25%;
-    }
+    // @media (min-width: 1200px) {
+    //     flex: 0 0 25%;
+    //     max-width: 25%;
+    // }
 }
 
 .category-col {
-    @media (min-width: 576px) {
-        flex: 0 0 50%;
-        max-width: 50%;
-    }
+    // @media (min-width: 576px) {
+    //     flex: 0 0 50%;
+    //     max-width: 50%;
+    // }
 
-    @media (min-width: 768px) {
-        flex: 0 0 50%;
-        max-width: 50%;
-    }
+    // @media (min-width: 768px) {
+    //     flex: 0 0 50%;
+    //     max-width: 50%;
+    // }
 
-    @media (min-width: 992px) {
-        flex: 0 0 33.333333%;
-        max-width: 33.333333%;
-    }
+    // @media (min-width: 992px) {
+    //     flex: 0 0 33.333333%;
+    //     max-width: 33.333333%;
+    // }
 
-    @media (min-width: 1200px) {
-        flex: 0 0 33.333333%;
-        max-width: 33.333333%;
-    }
+    // @media (min-width: 1200px) {
+    //     flex: 0 0 33.333333%;
+    //     max-width: 33.333333%;
+    // }
 }
 
 //////////////////////////////////////////////////////////////
 /////   Theme colors   //////////////////////////////////////
 ////////////////////////////////////////////////////////////
-$main: blue;
-$maind: darken(blue, 10%);
-$mainl: #f0d7d6;
+$main: #1a98ff;
+$maind: darken(#1a98ff, 10%);
+$mainl: lighten(#1a98ff, 30%);
 $main2: #5802A2;
 $txt: #333333;
 $bg: #eaebea;
@@ -118,7 +117,7 @@ $bg: #eaebea;
 
 
 // Font Variables
-$eng1: "Poppins", sans-serif;
+$eng1: "Nunito", sans-serif;
 
 *,
 ::after,
@@ -143,9 +142,11 @@ body {
     // font-size: clamp(24px, calc(24px * 1vw), 36px);
     line-height: 1.6;
     display: flex;
-    flex-direction: column;
+    // flex-direction: column;
     margin: 0;
     background: #f8f8f891;
+    padding-left: 135px;
+    flex-wrap: wrap;
 }
 
 a {
@@ -183,10 +184,10 @@ li {
 
 .btn-main {
     width: 130px;
-    height: 40px;
+    height: 37px;
     color: #fff;
     border-radius: 0;
-    padding: 10px 25px;
+    padding: 6px 30px 6px 15px;
     font-weight: 500;
     background: transparent;
     cursor: pointer;
@@ -194,33 +195,70 @@ li {
     position: relative;
     display: inline-block;
     outline: none;
-    background: $main;
-    background: linear-gradient(0deg, $main 0%, $maind 100%);
-    border: none;
+    background: none;
+    border: 3px solid $main;
+    overflow: hidden;
+    color: #000;
+    font-weight: 600;
+
+    &::after {
+        content: '\f054';
+        /* Unicode for Font Awesome chevron icon */
+        font-family: "Font Awesome 6 Free";
+        -webkit-font-smoothing: antialiased;
+        display: var(--fa-display, inline-block);
+        font-style: normal;
+        font-variant: normal;
+        line-height: 1;
+        text-rendering: auto;
+        font-weight: 900;
+        position: absolute;
+        top: 50%;
+        right: 13px;
+        transform: translateY(-50%);
+        transition: all 0.3s ease;
+        opacity: 0;
+    }
 
     &:hover {
         background: linear-gradient(56deg, $main 0%, $maind 100%);
-        transform: scale(1.05);
         color: #fff;
+
+        &::after {
+            right: 5px;
+            transform: translateY(-50%);
+            opacity: 1;
+        }
     }
 }
 
 .page-header {
     font-size: 40px;
-    color: $main;
+    color: #fff;
     position: relative;
     margin: 0;
+    margin-top: -35px;
+    margin-left: 35px;
+    background-color: $main;
+    padding: 10px 20px;
 
-    &::before {
-        content: '';
-        position: absolute;
-        background-color: $main;
-        width: 100px;
-        height: 5px;
-        bottom: -1px;
-        left: 1px;
-        animation: w70 1s ease forwards;
-    }
+    // &::before {
+    //     content: '';
+    //     position: absolute;
+    //     background-color: $main;
+    //     width: 100px;
+    //     height: 5px;
+    //     bottom: -1px;
+    //     left: 1px;
+    //     animation: w70 1s ease forwards;
+    // }
+}
+
+.section-header {
+    background: $main;
+    padding: 5px 10px;
+    color: #fff !important;
+    margin-top: 0;
 }
 
 .message {
@@ -228,11 +266,13 @@ li {
     top: 70px;
     right: 50px;
     width: fit-content;
+    z-index: 5;
 
     &.success {
         background: green;
         color: #fff;
         padding: 5px 10px;
+    z-index: 1;
     }
 }
 
@@ -243,8 +283,12 @@ li {
 /////   NAVBAR   ////////////////////////////////////////////
 ////////////////////////////////////////////////////////////
 .navigation {
-    height: 55px;
-    background: linear-gradient(45deg, $main, $maind);
+    position: fixed;
+    top: 0;
+    left: 0;
+    bottom: 0;
+    height: 100%;
+    background: #fff;
     box-shadow: 0 1px 3px rgba(0, 0, 0, 0.12), 0 1px 2px rgba(0, 0, 0, 0.24);
 
     .nav-container {
@@ -254,10 +298,13 @@ li {
         .brand {
             position: absolute;
             padding-left: 20px;
+            padding-right: 20px;
             float: left;
             line-height: 55px;
             text-transform: uppercase;
             font-size: 1.4em;
+            background: linear-gradient(45deg, $main, $maind);
+            z-index: 5;
 
             span {
                 color: #ffffff;
@@ -269,21 +316,28 @@ li {
 
         nav {
             float: right;
+            width: 135px;
 
             .nav-list {
                 list-style: none;
                 margin: 0;
                 padding: 0;
+                display: flex;
+                flex-wrap: wrap;
+                margin-top: 50px;
 
                 li {
                     float: left;
                     position: relative;
+                    border-bottom: 2px solid $bg;
+                    width: 100%;
 
                     a {
                         display: block;
                         padding: 0 20px;
                         line-height: 55px;
-                        color: #ffffff;
+                        color: #000;
+                        text-transform: uppercase;
                         text-decoration: none;
 
                         &:hover {
@@ -295,6 +349,8 @@ li {
 
                 &.active {
                     display: block;
+                    position: relative;
+                    z-index: 2;
 
                     li {
                         float: none;
@@ -384,39 +440,39 @@ li {
     }
 }
 
-@media only screen and (max-width: 800px) {
+// @media only screen and (max-width: 800px) {
 
-    // .nav-list.active {
-    .nav-mobile {
-        display: block !important;
-    }
+//     // .nav-list.active {
+//     .nav-mobile {
+//         display: block !important;
+//     }
 
-    nav {
-        width: 100%;
-        padding: 55px 0 15px;
+//     nav {
+//         width: 100%;
+//         padding: 55px 0 15px;
 
-        ul {
-            display: none;
+//         ul {
+//             display: none;
 
-            li {
-                float: none;
+//             li {
+//                 float: none;
 
-                a {
-                    padding: 15px;
-                    line-height: 20px;
-                    background: #262626;
-                }
-            }
-        }
-    }
+//                 a {
+//                     padding: 15px;
+//                     line-height: 20px;
+//                     background: #262626;
+//                 }
+//             }
+//         }
+//     }
 
-}
+// }
 
-@media screen and (min-width:800px) {
-    .nav-list {
-        display: block !important;
-    }
-}
+// @media screen and (min-width:800px) {
+//     .nav-list {
+//         display: block !important;
+//     }
+// }
 
 //////////////////////////////////////////////////////////////
 /////   FOOTER   ////////////////////////////////////////////
@@ -428,29 +484,52 @@ footer {
     align-items: center;
     justify-content: center;
     margin-top: auto;
+    order: 6;
+    position: fixed;
+    bottom: 0;
+    left: 0;
+    z-index: 3;
+    order: 1;
+    width: 135px;
+    height: 50px;
+
+    form {
+        position: fixed;
+        bottom: 55px;
+        left: 25px;
+        z-index: 3;
+    }
 }
 
 
 //////////////////////////////////////////////////////////////
 /////   HOMEPAGE   //////////////////////////////////////////
 ////////////////////////////////////////////////////////////
-// jumbotron
 .intro-section {
     display: flex;
     align-items: center;
+    padding: 20px;
+    width: 100%;
+    // position: relative;
+    order: 1;
 
     .intro-body {
         display: flex;
         align-items: center;
         // justify-content: center;
         margin: auto;
+        flex-wrap: wrap;
+
+        >div {
+            margin: 5px 10px;
+        }
 
         img {
             width: fit-content;
-            max-height: 500px;
-            padding: 40px 10px;
+            max-height: 400px;
+            padding: 0 10px;
             object-fit: contain;
-            margin: 0 30px;
+            margin: 0 auto;
 
         }
 
@@ -498,7 +577,14 @@ footer {
 }
 
 .intro-section-2 {
-    padding: 5% 10%;
+    padding: 3% 6%;
+    order: 3;
+    width: 40%;
+
+    @media (max-width: 768px) {
+        width: 100%;
+    }
+
 
     .intro-body {
 
@@ -517,19 +603,19 @@ footer {
 
             &:nth-child(2) {
                 font-weight: 600;
-                font-size: 30px;
+                font-size: 20px;
                 line-height: 1.2;
                 margin-bottom: 5px;
                 margin-top: 5px;
             }
 
             &:nth-child(3) {
-                font-size: 20px;
+                font-size: 15px;
                 margin: 5px 0px;
             }
 
             &:nth-child(4) {
-                font-weight: 600;
+                font-weight: 900;
                 font-size: 30px;
                 line-height: 1.2;
                 margin-bottom: 20px;
@@ -538,26 +624,30 @@ footer {
         }
 
         .btn-main {
-
-            width: fit-content;
+            width: 172px;
+            color: #fff;
         }
     }
 }
 
 .featured-books {
-    padding: 30px 0 40px 0;
+    padding: 0;
+    width: 50%;
+    // position: relative;
+    order: 2;
 
-    h1 {
-        color: $maind;
-        text-transform: uppercase;
+
+    @media (max-width: 768px) {
+        width: 100%;
     }
 
     .book-card {
         margin-bottom: 15px;
         border: 1px solid rgb(241, 241, 241); // width: 18rem;
         background: #fff;
-        height: 100%;
+        // height: 100%;
         transition: all .21s linear;
+        display: flex;
 
         &:hover {
             box-shadow: 0 1px 3px rgba(0, 0, 0, 0.02), 0 1px 2px rgba(0, 0, 0, 0.04);
@@ -568,9 +658,8 @@ footer {
         }
 
         .book-card-img {
-            width: 100%;
-            padding: 20px 10px 5px 10px;
-            max-height: 250px;
+            padding: 10px;
+            max-height: 120px;
             object-fit: contain;
             // border: 1px solid red;
         }
@@ -578,15 +667,17 @@ footer {
         .book-card-body {
             display: flex;
             flex-direction: column;
-            height: 110px;
+            // height: 110px;
             // border: 1px solid red;
-            padding: 5px 20px 0 20px;
+            padding: 10px 10px 10px 0px;
 
             h4,
             p {
                 margin: 0;
                 padding: 0;
                 @extend .textwrap;
+                text-wrap: unset;
+                height: 22px;
             }
 
             small {
@@ -594,7 +685,11 @@ footer {
             }
 
             a {
+                padding: 5px 15px 5px 15px;
                 margin-top: auto;
+                height: unset;
+                width: fit-content;
+                font-size: 10px;
             }
         }
 
@@ -603,8 +698,15 @@ footer {
 }
 
 .featured-categories {
-    padding: 25px 0 20px 0;
+    padding: 0 15px 0 15px;
     background: $bg;
+    order: 4;
+    width: 60%;
+
+    @media (max-width: 768px) {
+        width: 100%;
+    }
+
 
     h1 {
         color: $maind;
@@ -620,20 +722,23 @@ footer {
         margin-bottom: 20px;
 
         img {
-            height: 150px;
-            width: 100px;
+            height: 90px;
+            width: 60px;
         }
 
         .category-card-info {
-            padding: 5px 10px 10px 10px;
+            padding: 0px 10px 5px 10px;
 
             h3 {
                 margin-top: 0;
-                margin-bottom: 10px;
+                margin-bottom: 1px;
+                font-size: 15px;
             }
 
             ul {
                 li {
+                    font-size: 13px;
+
                     a:hover {
                         color: $main;
                     }
@@ -656,19 +761,30 @@ footer {
     background: #fff;
     padding: 20px 30px;
     box-shadow: 0 1px 3px rgba(0, 0, 0, 0.02), 0 1px 2px rgba(0, 0, 0, 0.04);
+    display: flex;
+    flex-wrap: wrap;
 
     h1 {
-        margin-top: 0;
-        margin-bottom: 0;
+        margin-top: 20px;
+        margin-bottom: 10px;
+        line-height: 1;
+        text-align: center;
+        width: 100%;
     }
 
     h2 {
+        width: 100%;
         margin-top: 0;
+        margin-bottom: 30px;
+        line-height: 1;
+        text-align: center;
     }
 
     .info-box {
         margin-bottom: 20px;
+        margin: 10px;
         display: flex;
+        width: calc(50% - 20px);
         flex-wrap: wrap;
 
         .info-title {
@@ -694,6 +810,10 @@ footer {
 
             width: 50%;
             padding: 20px 20px 20px 10px;
+
+            @media (max-width: 576px) {
+                width: 100%;
+            }
 
             p:nth-child(1) {
                 font-size: 13px;
@@ -721,6 +841,16 @@ footer {
             p:nth-child(4) {}
         }
     }
+
+    @media (max-width: 992px) {
+        .info-box {
+            flex-wrap: wrap;
+
+            .info-title {
+                width: 100%;
+            }
+        }
+    }
 }
 
 //////////////////////////////////////////////////////////////
@@ -736,7 +866,8 @@ footer {
     table {
         width: 100%;
         border-collapse: collapse;
-        overflow: hidden;
+        // overflow: hidden;
+        // overflow: scroll;
         // th,
         // td {
         //     background-color: rgba(255, 255, 255, 0.2);
@@ -810,7 +941,9 @@ footer {
     display: flex;
     flex-wrap: wrap;
     align-items: baseline;
-    margin-bottom: 10px;
+    margin-top: -15px;
+    margin-bottom: 25px;
+    margin-left: 30px;
 
     * {
         margin: 3px;
@@ -836,13 +969,15 @@ footer {
     width: 100%;
     display: flex;
 
+
+
     input {
         padding: 10px;
         width: 100%;
         min-width: 300px;
-        border: 1px solid #ccc;
+        border: 3px solid #ccc;
         border-radius: 0;
-        margin-right: 10px;
+        // margin-right: 10px;
     }
 
     button {
@@ -857,6 +992,15 @@ footer {
             background-color: $maind;
         }
     }
+
+    @media (max-width: 576px) {
+        flex-wrap: wrap;
+
+        input {
+            width: 100%;
+            min-width: unset !important;
+        }
+    }
 }
 
 .book-view-container {
@@ -866,6 +1010,10 @@ footer {
     padding: 20px 20px;
     box-shadow: 0 1px 3px rgba(0, 0, 0, 0.02), 0 1px 2px rgba(0, 0, 0, 0.04);
     display: flex;
+
+    @media (max-width: 576px) {
+        flex-wrap: wrap;
+    }
 
     .book-img {
         img {
@@ -1046,28 +1194,43 @@ footer {
 /////   LOGIN PAGE   ////////////////////////////////////////
 ////////////////////////////////////////////////////////////
 .login-contaienr {
+    margin-top: 30px;
     h2 {
         text-align: center;
         width: fit-content;
         margin: auto;
+        width: 100%;
     }
 
     .form {
         position: relative;
         z-index: 1;
         background: #FFFFFF;
-        max-width: 360px;
+        // max-width: 360px;
         margin: 0 auto 100px;
         padding: 45px;
         text-align: center;
         box-shadow: 0 5px 10px rgba(0, 0, 0, 0.02), 0 5px 10px rgba(0, 0, 0, 0.04);
+        width: 100%;
+        display: flex;
+        flex-wrap: wrap;
+        align-items: center;
+
+        small{
+            width: 100%;
+        }
+
+        label{
+            width: 10%;
+        }
 
         input {
             outline: 0;
-            background: #f2f2f2;
+            background: #f5f5f5;
             width: 100%;
+            width: 40%;
             border: 0;
-            margin: 0 0 15px;
+            margin: 5px 0;
             padding: 15px;
             box-sizing: border-box;
             font-size: 14px;
@@ -1080,8 +1243,8 @@ footer {
         }
 
         button {
-            margin-top: 20px;
-            width: 100%;
+            max-width: 360px;
+            margin: 40px auto 1px auto;
             height: 40px;
             color: #fff;
             border-radius: 0;
@@ -1112,13 +1275,15 @@ footer {
 .contact-container {
     position: absolute;
     top: 40%;
-    right: 50%;
+    right: 45%;
     transform: translate(50%, -50%);
     background: #fff;
-    padding: 20px 20px;
+    padding: 20px 20px 40px 20px;
     box-shadow: 0 1px 3px rgba(0, 0, 0, 0.02), 0 1px 2px rgba(0, 0, 0, 0.04);
 
     h1 {
+        color: $maind;
+        text-transform: uppercase;
         text-align: center;
         margin-bottom: 50px;
     }
@@ -1127,11 +1292,17 @@ footer {
         display: inline-flex;
         list-style: none;
 
+
+        @media (max-width: 576px) {
+            flex-wrap: wrap;
+            justify-content: center;
+        }
+
         .icon {
             position: relative;
-            background: $main;
-            color: #fff;
-            border-radius: 0;
+            border: 3px solid $mainl;
+            color: $main;
+            border-radius: 50%;
             padding: 15px;
             margin: 10px;
             width: 50px;
@@ -1147,6 +1318,7 @@ footer {
 
             &:hover {
                 background: $maind;
+                color: #fff;
 
                 .tooltip {
                     background: $maind;
@@ -1170,7 +1342,7 @@ footer {
             background: #ffffff;
             color: #ffffff;
             padding: 5px 8px;
-            border-radius: 0;
+            border-radius: 5px;
             opacity: 0;
             pointer-events: none;
             transition: all 0.3s ease-in-out;

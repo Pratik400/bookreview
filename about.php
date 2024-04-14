@@ -4,7 +4,7 @@
     <h1 class="page-header">Get in touch</h1>
     <div class="about-container">
         <h1>PRATIK BAJRACHARYA</h1>
-        <h2>Web Developer & Designerss</h2>
+        <h2>Web Developer & Designer</h2>
         <!-- <div>
             <ul>
                 <li>HTML</li>
@@ -21,7 +21,7 @@
             </ul>
         </div> -->
         <div class="info-box">
-            <div class="info-title"> WORK EXPERIENCE</div>
+            <div class="info-title">WORK EXPERIENCE</div>
 
             <div class="info">
                 <p><i class="fa-regular fa-calendar"></i>April 2023 - Present</p>
@@ -51,8 +51,6 @@
                 <p><i class="fa-solid fa-location-dot"></i>Mid Baneshwor, Kathmandu</p>
             </div>
         </div>
-
-
 
         <div class="info-box">
             <div class="info-title">EDUCATION</div>
