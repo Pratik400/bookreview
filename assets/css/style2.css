@@ -872,6 +872,49 @@ footer form {
 .book-add-container .form .rst:hover {
   transform: scale(1.05);
 }
+.book-add-container .author-field input {
+  margin-bottom: 0;
+}
+.book-add-container .remove-author,
+.book-add-container .add-author {
+  display: flex;
+  align-items: start;
+  width: -moz-fit-content;
+  width: fit-content;
+  font-size: 13px;
+  border-radius: 0;
+  padding: 8px 10px;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  outline: none;
+  border: none;
+}
+.book-add-container .remove-author {
+  background: rgba(255, 0, 0, 0.149);
+  color: red;
+  margin-top: 2px;
+  margin-bottom: 15px;
+}
+.book-add-container .remove-author:hover {
+  color: #990000;
+  transform: scale(1.05);
+  background: rgba(255, 0, 0, 0.249);
+}
+.book-add-container .add-author {
+  color: #1e7845;
+  background: #b6eecf;
+  margin-top: 20px;
+  font-weight: 550;
+  padding: 8px 13px 6px 10px;
+}
+.book-add-container .add-author i {
+  margin-right: 5px;
+}
+.book-add-container .add-author:hover {
+  background: #63db98;
+  transform: scale(1.05);
+  color: #fff;
+}
 
 .login-contaienr {
   margin-top: 30px;
