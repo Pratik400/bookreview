@@ -63,7 +63,7 @@ if (!$result2) {
             <p class="">Chip War: The Fight for the World's Most Critical Technology (4.5)</p>
             <p class="">By Chris Miller (Author)</p>
             <p class="">$37.89</p>
-            <div class="btn-main">RELEASING SOON</div>
+            <button class="btn-main coming-soon">RELEASING SOON</button>
         </div>
     </div>
 </section>
@@ -93,7 +93,7 @@ if (!$result2) {
                             <p>
                                 <small><?php echo number_format($row['average_rating'], 1); ?>(<?php echo $row['rating_count']; ?>)</small>
                             </p>
-                            <a href="/bookview.php?bookId=<?php echo $row['bookId']; ?>" class="btn-main">
+                            <a href="bookview.php?bookId=<?php echo $row['bookId']; ?>" class="btn-main">
                                 SEE MORE
                             </a>
                         </div>
@@ -114,10 +114,10 @@ if (!$result2) {
                     <div class="category-card-info">
                         <h3>Tech Infrastructure</h3>
                         <ul class="">
-                            <li class=""><a href=".">Cloud Computing</a></li>
-                            <li class=""> <a href=".">Networking</a></li>
-                            <li class=""><a href=".">DevOps</a> </li>
-                            <li class=""><a href=".">Mobile Development</a></li>
+                            <li class=""><a href="" class="coming-soon">Cloud Computing</a></li>
+                            <li class=""> <a href="" class="coming-soon">Networking</a></li>
+                            <li class=""><a href="" class="coming-soon">DevOps</a> </li>
+                            <li class=""><a href="" class="coming-soon">Mobile Development</a></li>
                         </ul>
                     </div>
                 </div>
@@ -128,10 +128,10 @@ if (!$result2) {
                     <div class="category-card-info">
                         <h3>Cybersecurity</h3>
                         <ul class="">
-                            <li class=""><a href=".">Blockchain</a></li>
-                            <li class=""> <a href=".">Data Privacy</a></li>
-                            <li class=""><a href=".">Cryptography</a> </li>
-                            <li class=""><a href=".">Social Engineering</a></li>
+                            <li class=""><a href="" class="coming-soon">Blockchain</a></li>
+                            <li class=""> <a href="" class="coming-soon">Data Privacy</a></li>
+                            <li class=""><a href="" class="coming-soon">Cryptography</a> </li>
+                            <li class=""><a href="" class="coming-soon">Social Engineering</a></li>
                         </ul>
                     </div>
                 </div>
@@ -142,10 +142,10 @@ if (!$result2) {
                     <div class="category-card-info">
                         <h3>Emerging Tech & UX</h3>
                         <ul class="">
-                            <li class=""><a href=".">Internet of Things</a></li>
-                            <li class=""> <a href=".">Quantum Computing</a></li>
-                            <li class=""><a href=".">User Experience</a> </li>
-                            <li class=""><a href=".">Software Development</a></li>
+                            <li class=""><a href="" class="coming-soon">Internet of Things</a></li>
+                            <li class=""> <a href="" class="coming-soon">Quantum Computing</a></li>
+                            <li class=""><a href="" class="coming-soon">User Experience</a> </li>
+                            <li class=""><a href="" class="coming-soon">Software Development</a></li>
                         </ul>
                     </div>
                 </div>
@@ -179,7 +179,7 @@ if (!$result2) {
                             <p>
                                 <small><?php echo number_format($row['average_rating'], 1); ?>(<?php echo $row['rating_count']; ?>)</small>
                             </p>
-                            <a href="/bookview.php?bookId=<?php echo $row['bookId']; ?>" class="btn-main">
+                            <a href="bookview.php?bookId=<?php echo $row['bookId']; ?>" class="btn-main">
                                 SEE MORE
                             </a>
                         </div>
@@ -200,7 +200,7 @@ if (!$result2) {
             <p class="">Technology & Society: Second Edition (4.5)</p>
             <p class="">Edited by Deborah G. Johnson</p>
             <p class="">$37.89</p>
-            <div class="btn-main">RELEASING SOON</div>
+            <div class="btn-main coming-soon">RELEASING SOON</div>
         </div>
     </div>
 </section>

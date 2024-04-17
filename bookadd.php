@@ -44,11 +44,11 @@ if ($_SERVER["REQUEST_METHOD"] == "POST" && isset($_POST["submit"])) {
 
         if (mysqli_query($mysqli, $insertBookSql)) {
             $lastBookId = trim($_POST["bookId"]);
-            echo "<p>lastBookId = $lastBookId</p>";
 
             // Insert authors into author table
             foreach ($authorNames as $authorName) {
-                $authorId = mysqli_real_escape_string($mysqli, md5(uniqid())); // Generate unique ID for author
+                // $authorId = mysqli_real_escape_string($mysqli, md5(uniqid()));
+                $authorId = mysqli_real_escape_string($mysqli, mt_rand(10000, 99999));
                 $escapedAuthorName = mysqli_real_escape_string($mysqli, $authorName);
                 $insertAuthorSql = "INSERT INTO author (authorId, authorName) VALUES ('$authorId', '$escapedAuthorName')";
                 if (mysqli_query($mysqli, $insertAuthorSql)) {
@@ -56,12 +56,10 @@ if ($_SERVER["REQUEST_METHOD"] == "POST" && isset($_POST["submit"])) {
                     $errors[] = "Error inserting author: " . mysqli_error($mysqli);
                 }
             }
-
-            // Now that book is inserted, insert mapping into authorship table
+            // book is inserted, insert mapping into authorship table
             foreach ($authorNames as $authorName) {
                 $selectAuthorIdSql = "SELECT authorId FROM author WHERE authorName = '$authorName'";
                 $selectAuthorIdResult = mysqli_query($mysqli, $selectAuthorIdSql);
-                echo "<p>selectAuthorIdSql = $selectAuthorIdSql</p>";
                 if ($selectAuthorIdResult) {
                     $authorIdRow = mysqli_fetch_assoc($selectAuthorIdResult);
                     $authorId = $authorIdRow['authorId'];
