@@ -71,7 +71,7 @@ if (!$resultReviewers) {
 
 
 
-    <div class="bookmark"><a href="/booklist.php">Books</a> <i class="fa-solid fa-chevron-right"></i> <span><?php echo $bookId; ?></span> <i class="fa-solid fa-chevron-right"></i> <span><?php echo $bookTitle; ?></span> </div>
+    <div class="bookmark"><a href="booklist.php">Books</a> <i class="fa-solid fa-chevron-right"></i> <span><?php echo $bookId; ?></span> <i class="fa-solid fa-chevron-right"></i> <span><?php echo $bookTitle; ?></span> </div>
     <section class="book-view-container">
         <div class="book-img">
             <img src="assets/img/bookplaceholder.jpg" alt="">
